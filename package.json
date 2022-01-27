@@ -1,6 +1,6 @@
 {
   "name": "@rsi-x/ricoh-livestreaming-web-sdk",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "ricoh-ls-sdk",
   "scripts": {
     "start": "http-server -a localhost -o demo -p 3000 -s",
@@ -11,7 +11,9 @@
   "devDependencies": {
     "@babel/cli": "^7.16.8",
     "@babel/core": "^7.16.12",
+    "@babel/plugin-transform-runtime": "^7.16.10",
     "@babel/preset-env": "^7.16.11",
+    "@babel/runtime": "^7.16.7",
     "http-server": "^13.0.1"
   },
   "main": "lib/ricoh-ls-sdk.js",
