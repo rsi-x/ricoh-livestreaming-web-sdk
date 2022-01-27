@@ -1,6 +1,6 @@
 /** @module ricoh-ls-sdk
  */
-declare module "@ricoh-live-streaming-api/web-sdk" {
+declare module "@rsi-x/ricoh-livestreaming-web-sdk" {
   /** @typedef {String} ConnectionID
    */
   type ConnectionID = string;
@@ -15,7 +15,8 @@ declare module "@ricoh-live-streaming-api/web-sdk" {
   type JwtAccessToken = string;
   /** @type {string}
    */
-  const SIGNALING_URL = "wss://signaling-dev.livestreaming.mw.smart-integration.ricoh.com/v1/room";
+  const SIGNALING_URL =
+    "wss://signaling-dev.livestreaming.mw.smart-integration.ricoh.com/v1/room";
   /**
    * Client の State Type
    *
@@ -150,7 +151,11 @@ declare module "@ricoh-live-streaming-api/web-sdk" {
      * @param {EventListener} listener
      * @param {AddEventListenerOptions} options
      */
-    addEventListener(type: string, listener: EventListener, options?: AddEventListenerOptions): void;
+    addEventListener(
+      type: string,
+      listener: EventListener,
+      options?: AddEventListenerOptions
+    ): void;
     /**
      * @param {Event} event
      */
@@ -161,7 +166,11 @@ declare module "@ricoh-live-streaming-api/web-sdk" {
      * @param {EventListener} func
      * @param {EventListenerOptions} options
      */
-    removeEventListener(type: string, func: EventListener, options?: EventListenerOptions): void;
+    removeEventListener(
+      type: string,
+      func: EventListener,
+      options?: EventListenerOptions
+    ): void;
   }
   /** @typedef {{listener: EventListener, options: AddEventListenerOptions}} EventListenerWithOptions
    */
@@ -182,7 +191,10 @@ declare module "@ricoh-live-streaming-api/web-sdk" {
      * @param {EventType} eventName
      * @param {function} listener
      */
-    public on(eventName: "connecting", listener: (e: { type: string }) => void): void;
+    public on(
+      eventName: "connecting",
+      listener: (e: { type: string }) => void
+    ): void;
     /**
      * open イベントハンドラを追加する(removeできない)
      *
@@ -198,7 +210,10 @@ declare module "@ricoh-live-streaming-api/web-sdk" {
      * @param {EventType} eventName
      * @param {function} listener
      */
-    public on(eventName: "closing", listener: (e: { type: string }) => void): void;
+    public on(
+      eventName: "closing",
+      listener: (e: { type: string }) => void
+    ): void;
     /**
      * close イベントハンドラを追加する(removeできない)
      *
@@ -206,7 +221,10 @@ declare module "@ricoh-live-streaming-api/web-sdk" {
      * @param {EventType} eventName
      * @param {function} listener
      */
-    public on(eventName: "close", listener: (e: { type: string }) => void): void;
+    public on(
+      eventName: "close",
+      listener: (e: { type: string }) => void
+    ): void;
     /**
      * error イベントハンドラを追加する(removeできない)
      *
@@ -222,7 +240,10 @@ declare module "@ricoh-live-streaming-api/web-sdk" {
      * @param {EventType} eventName
      * @param {function} listener
      */
-    public on(eventName: "addremoteconnection", listener: (e: { connection_id: string; meta: Object }) => void): void;
+    public on(
+      eventName: "addremoteconnection",
+      listener: (e: { connection_id: string; meta: Object }) => void
+    ): void;
     /**
      * updateremoteconnection イベントハンドラを追加する(removeできない)
      *
@@ -230,7 +251,10 @@ declare module "@ricoh-live-streaming-api/web-sdk" {
      * @param {EventType} eventName
      * @param {function} listener
      */
-    public on(eventName: "updateremoteconnection", listener: (e: { connection_id: string; meta: Object }) => void): void;
+    public on(
+      eventName: "updateremoteconnection",
+      listener: (e: { connection_id: string; meta: Object }) => void
+    ): void;
     /**
      * removeremoteconnection イベントハンドラを追加する(removeできない)
      *
@@ -238,7 +262,14 @@ declare module "@ricoh-live-streaming-api/web-sdk" {
      * @param {EventType} eventName
      * @param {function} listener
      */
-    public on(eventName: "removeremoteconnection", listener: (e: { connection_id: string; meta: Object; mediaStreamTrack?: MediaStreamTrack }) => void): void;
+    public on(
+      eventName: "removeremoteconnection",
+      listener: (e: {
+        connection_id: string;
+        meta: Object;
+        mediaStreamTrack?: MediaStreamTrack;
+      }) => void
+    ): void;
     /**
      * addremotetrack イベントハンドラを追加する(removeできない)
      *
@@ -246,7 +277,16 @@ declare module "@ricoh-live-streaming-api/web-sdk" {
      * @param {EventType} eventName
      * @param {function} listener
      */
-    public on(eventName: "addremotetrack", listener: (e: { connection_id: string; meta?: Object; mediaStreamTrack: MediaStreamTrack; stream: MediaStream; mute: MuteType }) => void): void;
+    public on(
+      eventName: "addremotetrack",
+      listener: (e: {
+        connection_id: string;
+        meta?: Object;
+        mediaStreamTrack: MediaStreamTrack;
+        stream: MediaStream;
+        mute: MuteType;
+      }) => void
+    ): void;
     /**
      * updateremotetrack イベントハンドラを追加する(removeできない)
      *
@@ -254,7 +294,15 @@ declare module "@ricoh-live-streaming-api/web-sdk" {
      * @param {EventType} eventName
      * @param {function} listener
      */
-    public on(eventName: "updateremotetrack", listener: (e: { connection_id: string; mediaStreamTrack: MediaStreamTrack; stream: MediaStream; meta: Object }) => void): void;
+    public on(
+      eventName: "updateremotetrack",
+      listener: (e: {
+        connection_id: string;
+        mediaStreamTrack: MediaStreamTrack;
+        stream: MediaStream;
+        meta: Object;
+      }) => void
+    ): void;
     /**
      * changestability イベントハンドラを追加する(removeできない)
      *
@@ -262,7 +310,10 @@ declare module "@ricoh-live-streaming-api/web-sdk" {
      * @param {EventType} eventName
      * @param {function} listener
      */
-    public on(eventName: "changestability", listener: (e: { connection_id: string; stability: string }) => void): void;
+    public on(
+      eventName: "changestability",
+      listener: (e: { connection_id: string; stability: string }) => void
+    ): void;
     /**
      * addlocaltrack イベントハンドラを追加する(removeできない)
      *
@@ -270,7 +321,13 @@ declare module "@ricoh-live-streaming-api/web-sdk" {
      * @param {EventType} eventName
      * @param {function} listener
      */
-    public on(eventName: "addlocaltrack", listener: (e: { mediaStreamTrack: MediaStreamTrack; stream: MediaStream }) => void): void;
+    public on(
+      eventName: "addlocaltrack",
+      listener: (e: {
+        mediaStreamTrack: MediaStreamTrack;
+        stream: MediaStream;
+      }) => void
+    ): void;
     /**
      * updatemute イベントハンドラを追加する(removeできない)
      *
@@ -278,7 +335,15 @@ declare module "@ricoh-live-streaming-api/web-sdk" {
      * @param {EventType} eventName
      * @param {function} listener
      */
-    public on(eventName: "updatemute", listener: (e: { connection_id: string; mediaStreamTrack: MediaStreamTrack; stream: MediaStream; mute: MuteType }) => void): void;
+    public on(
+      eventName: "updatemute",
+      listener: (e: {
+        connection_id: string;
+        mediaStreamTrack: MediaStreamTrack;
+        stream: MediaStream;
+        mute: MuteType;
+      }) => void
+    ): void;
 
     /**
      * State を取得する
@@ -296,7 +361,9 @@ declare module "@ricoh-live-streaming-api/web-sdk" {
      * @param {MediaStreamTrack} mediaStreamTrack
      * @returns {Promise}
      */
-    public getStats(mediaStreamTrack?: MediaStreamTrack): Promise<{ [connection_id: string]: RTCStatsReport }>;
+    public getStats(
+      mediaStreamTrack?: MediaStreamTrack
+    ): Promise<{ [connection_id: string]: RTCStatsReport }>;
     /**
      * 渡された credential を用い Signaling Server に接続する
      *
@@ -305,7 +372,11 @@ declare module "@ricoh-live-streaming-api/web-sdk" {
      * @param {JwtAccessToken} access_token
      * @param {ConnectOption} option
      */
-    public connect(client_id: ClientID, access_token: JwtAccessToken, option: ConnectOption): void;
+    public connect(
+      client_id: ClientID,
+      access_token: JwtAccessToken,
+      option: ConnectOption
+    ): void;
     /**
      * 保持する PeerConnection と WebSocket を開放し
      * State を CLOSING に遷移
@@ -338,7 +409,10 @@ declare module "@ricoh-live-streaming-api/web-sdk" {
      * @param {LSTrack} lsTrack
      * @param {MediaStreamTrack} mediaStreamTrack
      */
-    public replaceMediaStreamTrack(lsTrack: LSTrack, mediaStreamTrack: MediaStreamTrack): Promise<void>;
+    public replaceMediaStreamTrack(
+      lsTrack: LSTrack,
+      mediaStreamTrack: MediaStreamTrack
+    ): Promise<void>;
 
     /**
      * TrackのMuteTypeを変更する
@@ -356,7 +430,10 @@ declare module "@ricoh-live-streaming-api/web-sdk" {
      * @param {ConnectionID} connection_id
      * @param {"required"|"unrequired"} videoRequirement
      */
-    public changeMediaRequirements(connection_id: ConnectionID, videoRequirement: "required" | "unrequired"): void;
+    public changeMediaRequirements(
+      connection_id: ConnectionID,
+      videoRequirement: "required" | "unrequired"
+    ): void;
 
     /**
      * 開始数分のログを取得する
@@ -393,7 +470,11 @@ declare module "@ricoh-live-streaming-api/web-sdk" {
      * @param {MediaStream} stream
      * @param {LSTrackOption} option
      */
-    constructor(mediaStreamTrack: MediaStreamTrack, stream: MediaStream, option: LSTrackOption);
+    constructor(
+      mediaStreamTrack: MediaStreamTrack,
+      stream: MediaStream,
+      option: LSTrackOption
+    );
     /** @type MediaStreamTrack
      */
     mediaStreamTrack: MediaStreamTrack;
